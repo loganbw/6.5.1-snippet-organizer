@@ -16,7 +16,12 @@ const app = express();
 app.engine('handlebars', exphbs({'defaultLayout': 'base'}));
 app.set('view engine', 'handlebars');
 //
+//database
+var database = process.env.MONGODB_URI || 'mongodb://localhost:27017/test';
+mongoose.connect(database);
+
 //setting up logins
+
 
 passport.use('local-login', new LocalStrategy(
   function(username, password, done) {
@@ -84,4 +89,4 @@ app.use(flash());
 
 //router and heroku
 router(app);
-app.listen(mongodb:'//localhost:27017/test');
+app.listen(process.env.PORT || 3000);
