@@ -1,1 +1,26 @@
-<h1>goodjob</h1>
+<form class="" action="/cdse" method="post">
+
+
+    <h2>Add a Code Snippet</h2>
+    <input type="text" name="title" required placeholder="Code Snippet Title">
+      <textarea type="textarea" name="body" required placeholder="Type your code here"></textarea>
+
+
+    <input type="text" name="notes" placeholder="Enter notes here(optional)">
+    <input type="text" name="language" required placeholder="Enter language">
+
+    <input type="text" name="tag" placeholder="tags">
+    <input class="btntype="submit name="" value="Add Code Snippet">
+
+</form>
+
+
+  {{#each cdse}}
+    <ul class="code-list">
+      <li class="code-name">{{title}}</li>
+      <li>Language: {{language}}</li>
+      <li>Code: {{body}}</li>
+      <li>Notes: {{notes}}</li>
+      <li>Tags: {{tags}}</li>
+    </ul>
+  {{/each}}

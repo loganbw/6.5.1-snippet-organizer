@@ -1,5 +1,5 @@
 var HomeController = {
-  home: function(req,res){
+  home: function(req, res) {
     res.render('home/home');
   }
 };

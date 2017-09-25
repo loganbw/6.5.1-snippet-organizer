@@ -21,9 +21,9 @@ module.exports = function(app){
 // Home routes
   homeRouter.get('/' , HomeController.home);
 
-
   // User Routes
     userRouter.get('/login', UserController.login);
+
     userRouter.post('/login', passport.authenticate('local-login', {
       successRedirect: '/cdse',
       failureRedirect: '/login',
@@ -38,8 +38,18 @@ module.exports = function(app){
     }));
 
 
-  app.use('/', homeRouter);
+    // make cdse routes
+    userRouter.get('/cdse', CdseController.list);
+    // userRouter.get('/cdse', (res, req) => {
+    //   console.log("REQ:::" + req);
+    //   res.status(200).json({ message: 'Connected!' });
+    // });
+    // cdseRouter.post('/cdse', CdseController.add);
+
+
+
+    app.use('/', homeRouter);
     app.use('/', userRouter);
-    app.use('/', cdseRouter);
+    app.use('/cdse', userRouter);
 
 };
