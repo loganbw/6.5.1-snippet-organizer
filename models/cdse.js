@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const cdseSchema = new mongoose.Schema({
+  id: {
+    type: Number
+  },
   title: {
     type: String
   },
@@ -16,8 +19,7 @@ const cdseSchema = new mongoose.Schema({
   tags: [{
     type: String,
     trim: true
-  }],
-  userId: String
+  }]
 });
 
 const Cdse = mongoose.model('Cdse', cdseSchema);

@@ -39,17 +39,14 @@ module.exports = function(app){
 
 
     // make cdse routes
-    userRouter.get('/cdse', CdseController.list);
-    // userRouter.get('/cdse', (res, req) => {
+    cdseRouter.get('/cdse', CdseController.list);
+    // cdseRouter.get('/cdse', (res, req) => {
     //   console.log("REQ:::" + req);
     //   res.status(200).json({ message: 'Connected!' });
     // });
-    // cdseRouter.post('/cdse', CdseController.add);
-
-
-
+     cdseRouter.post('/cdse', CdseController.add);
     app.use('/', homeRouter);
     app.use('/', userRouter);
-    app.use('/cdse', userRouter);
+    app.use('/', cdseRouter);
 
 };

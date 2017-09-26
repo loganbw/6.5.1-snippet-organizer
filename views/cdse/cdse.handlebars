@@ -1,26 +1,27 @@
 <form class="" action="/cdse" method="post">
+  <h2>Add a Code Snippet</h2>
+  <input type="text" name="title" required placeholder="Title">
+  <br>
+  <textarea type="textarea" name="body" required placeholder="Type your code"></textarea>
+  <br>
+  <input type="text" name="notes" placeholder="Enter notes here(optional)">
+  <br>
+  <input type="text" name="language" required placeholder="Enter language">
+  <br>
 
-
-    <h2>Add a Code Snippet</h2>
-    <input type="text" name="title" required placeholder="Code Snippet Title">
-      <textarea type="textarea" name="body" required placeholder="Type your code here"></textarea>
-
-
-    <input type="text" name="notes" placeholder="Enter notes here(optional)">
-    <input type="text" name="language" required placeholder="Enter language">
-
-    <input type="text" name="tag" placeholder="tags">
-    <input class="btntype="submit name="" value="Add Code Snippet">
+  <input type="text" name="tag" placeholder="tags">
+  <br>
+  <input class="btntype=" type="submit" name="" value="Add Code Snippet">
 
 </form>
 
-
-  {{#each cdse}}
-    <ul class="code-list">
-      <li class="code-name">{{title}}</li>
-      <li>Language: {{language}}</li>
-      <li>Code: {{body}}</li>
-      <li>Notes: {{notes}}</li>
-      <li>Tags: {{tags}}</li>
-    </ul>
-  {{/each}}
+<h3>Your Code Snippets!</h3>
+{{#each showCode}}
+  <ul class="code-list">
+    <li class="code-name">{{title}}</li>
+    <li>Language: {{language}}</li>
+    <li>Code: {{body}}</li>
+    <li>Notes: {{notes}}</li>
+    <li>Tags: {{tags}}</li>
+  </ul>
+{{/each}}
